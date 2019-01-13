@@ -1,0 +1,101 @@
+#header {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20px;
+}
+.legend {
+    font-family: 'Poiret One', cursive;
+    font-size: 16px;
+    width:auto;
+    margin-left: 20px;
+}
+.title {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color: #00b7ef;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px
+}
+.content {
+    font: 'Arial';
+    font-size: 16px;
+    color: #c1bfc0;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+.author {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 24px;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    bottom: 0;
+    right: 10px;
+}
+.post_btn {
+    font-size: 16px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 80px;
+    margin: 8px auto;
+    height: 33px;
+}
+#add_post_btn {
+    background-color: #66cdaa;
+}
+#check_post_btn {
+    background-color: #66CDAA;
+}
+#close_post_btn {
+    background-color: red;
+}
+.block {
+    max-width: 800px;
+    position: relative;
+}
+.post {
+    border: 3px solid #00b7ef;
+    margin: 50px auto;
+}
+.add_block {
+    border: 1px dashed black;
+    text-align: center;
+    margin: 20px auto;
+}
+.added_post {
+    border: 3px dashed #00b7ef;
+    margin: 0 auto;
+    min-height: 300px;
+}
+input {
+    font: 'Arial';
+    font-size: 16px;
+}
+.title_input {
+    margin-left: 2.5%;
+    margin-top: 10px;
+}
+.content_input {
+    height: 100px;
+    width: 95%;
+    margin: 20px auto;
+    display: block;
+    max-height: 120px;
+}
+.author_input {
+    position: absolute;
+    right: 0;
+    margin-right: 2.5%;
+
+}
+.empty_posts {
+    text-align: center;
+    font: 'Arial';
+    font-size: 24px;   
+}
+.hidden_element {
+    display: none;
+}

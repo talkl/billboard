@@ -1,0 +1,15 @@
+{% extends "billboard_app/base.html" %}
+{% load static %}
+{% block header %}
+    <link rel="stylesheet" href="{% static 'billboard_app/css/index_style.css' %}">
+{% endblock header %}
+{% block content %}
+    <p class="lead mt-2">
+        The billboard app lets you write Posts and let other see your posts.
+    </p>
+    <p class="lead mt-2">
+        Register or login from the navbar at the top
+    </p>
+    <div class="index_bg">
+    </div>
+{% endblock content %}

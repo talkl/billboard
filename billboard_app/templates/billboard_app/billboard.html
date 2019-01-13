@@ -1,0 +1,50 @@
+{% extends "billboard_app/base.html" %}
+{% load static %}
+{% block header %}
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'billboard_app/css/style.css' %}">
+    <script type="text/javascript" src="{% static 'billboard_app/js/script.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <h1 id="header" class="h1">BILLBOARD</h1>
+    <form id="add_post_form" class="hidden_element" action="{% url 'billboard_app:billboard' %}" method="POST">
+        {% csrf_token %}
+        <fieldset class="block added_post">
+            <legend class="legend">
+                <span>{{ today|date:"j/n/Y" }}</span>
+            </legend>
+            <input id="title" name="title" class="title_input" type="text" placeholder="Title" required/>
+            <textarea id="content" name="content" class="content_input" placeholder="Your message here" required></textarea><br>
+            <input id="author" name="author" class="author_input" type="text" placeholder="Author" disabled value="{{ user }}"/>
+        </fieldset>
+    </form>
+    <div class="block add_block">
+        <button type="button" id="add_post_btn" class="post_btn">
+            <i class="fa fa-plus"></i>
+        </button>
+        <button type="button" id="close_post_btn" class="post_btn hidden_element">
+            <i class="fa fa-close"></i>
+        </button>
+        <button type="button" id="check_post_btn" class="post_btn hidden_element">
+            <i class="fa fa-check"></i>
+        </button>
+    </div>
+    {% for post in posts %}
+        <fieldset class="block post">
+            <legend class="legend">
+                <span>{{ post.date_posted|date:"j/n/Y" }}</span>
+            </legend>
+            <h2 class="h2 title">{{ post.title }}</h2>
+            <p class="lead content">{{ post.content }}</p>
+            <span class="author">{{ post.author }}</span>
+        </fieldset>
+    {% empty %}
+        <div class="empty_posts">
+            <div>No messages...</div>
+            <div>Click the '+' button to add a new message</div>
+        </div>
+    {% endfor %}
+{% endblock content %}

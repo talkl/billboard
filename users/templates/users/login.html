@@ -1,0 +1,18 @@
+{% extends "billboard_app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Log In</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    <div class="border-top mt-3 pt-5">
+        <abbr>
+            Need an account?<a class="ml-2" href="{% url 'register' %}">Register</a>
+        </abbr>
+    </div>
+{% endblock %}

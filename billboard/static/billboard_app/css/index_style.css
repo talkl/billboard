@@ -1,0 +1,11 @@
+.index_bg {
+    background-image: url(../images/billboard.png);
+    background-position: center center;
+    background-size: cover;
+    flex: 1 1 auto;
+}
+#pages_container {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
